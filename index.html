@@ -40,7 +40,7 @@
         }
     </script>
 </head>
-<body class="font-sans text-gray-800 bg-gray-50 antialiased selection:bg-agri-700 selection:text-white">
+<body class="font-sans text-gray-800 bg-gray-50 antialiased selection:bg-agri-700 selection:text-white overflow-x-hidden">
 
     <!-- Django Template Note: 
          Replace static paths like 'assets/img/hero.png' with '{% static "img/hero.png" %}'
@@ -55,9 +55,9 @@
                 <div class="flex-shrink-0 flex items-center py-2">
                     <a href="#" class="flex items-center gap-3 group">
                         <img src="assets/img/logo.png" alt="BETAGEX Logo" class="h-12 w-auto group-hover:opacity-90 transition-opacity"> <!-- Django hint: src="{% static 'img/logo.png' %}" -->
-                        <div class="flex flex-col justify-center">
-                            <span class="text-3xl font-serif font-black text-agri-800 tracking-tight leading-none">BETAGEX</span>
-                            <span class="text-[0.65rem] sm:text-xs font-semibold text-gray-500 uppercase tracking-wider mt-1">Bureau d'études et d'expertises agricoles</span>
+                        <div class="flex flex-col justify-center min-w-0">
+                            <span class="text-2xl sm:text-3xl font-serif font-black text-agri-800 tracking-tight leading-none truncate">BETAGEX</span>
+                            <span class="text-[0.55rem] sm:text-xs font-semibold text-gray-500 uppercase tracking-wider mt-1 truncate">Bureau d'études et d'expertises agricoles</span>
                         </div>
                     </a>
                 </div>
@@ -76,10 +76,23 @@
 
                 <!-- Mobile menu button -->
                 <div class="flex items-center md:hidden">
-                    <button type="button" class="text-gray-600 hover:text-agri-700 focus:outline-none focus:text-agri-700">
+                    <button type="button" id="mobile-menu-btn" class="text-gray-600 hover:text-agri-700 focus:outline-none focus:text-agri-700 p-2">
                         <i class="fa-solid fa-bars text-2xl"></i>
                     </button>
                 </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-agri-700 hover:bg-agri-50">Accueil</a>
+                <a href="#prestations" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-agri-700 hover:bg-agri-50">Nos Prestations</a>
+                <a href="#apropos" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-agri-700 hover:bg-agri-50">À Propos</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-agri-700 hover:bg-agri-50">Contact</a>
+                <a href="#contact" class="block mt-4 text-center bg-agri-700 text-white px-6 py-3 rounded-md font-semibold hover:bg-agri-800 transition-all shadow-md">
+                    Demander une consultation
+                </a>
             </div>
         </div>
     </nav>
@@ -439,5 +452,13 @@
         </div>
     </footer>
 
+    <!-- Script pour le menu mobile -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
