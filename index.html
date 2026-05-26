@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BETAGEX - Excellence en Ingénierie et Expertise Agricole</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome via CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        agri: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d', // Primary Agricultural Green
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50 antialiased selection:bg-agri-700 selection:text-white">
+
+    <!-- Django Template Note: 
+         Replace static paths like 'assets/img/hero.png' with '{% static "img/hero.png" %}'
+         Replace hrefs with '{% url "route_name" %}' 
+    -->
+
+    <!-- NAVBAR -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="text-3xl font-serif font-black text-agri-800 tracking-tight">BETAGEX</a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#" class="text-gray-600 hover:text-agri-700 font-medium transition-colors">Accueil</a>
+                    <a href="#prestations" class="text-gray-600 hover:text-agri-700 font-medium transition-colors">Nos Prestations</a>
+                    <a href="#apropos" class="text-gray-600 hover:text-agri-700 font-medium transition-colors">À Propos</a>
+                    <a href="#contact" class="text-gray-600 hover:text-agri-700 font-medium transition-colors">Contact</a>
+                    
+                    <a href="#contact" class="bg-agri-700 text-white px-6 py-2.5 rounded-md font-semibold hover:bg-agri-800 transition-all shadow-md hover:shadow-lg">
+                        Demander une consultation
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="flex items-center md:hidden">
+                    <button type="button" class="text-gray-600 hover:text-agri-700 focus:outline-none focus:text-agri-700">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative bg-agri-900 h-[600px] flex items-center">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 w-full h-full">
+            <img src="assets/img/hero.png" alt="Agriculture moderne" class="w-full h-full object-cover object-center" />
+            <div class="absolute inset-0 bg-black/60 mix-blend-multiply"></div>
+            <!-- Django hint: src="{% static 'img/hero.png' %}" -->
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight mb-6 max-w-4xl">
+                L'Excellence en Ingénierie et Expertise Agricole
+            </h1>
+            <p class="mt-4 text-lg md:text-xl text-gray-200 mb-10 max-w-2xl font-light">
+                BETAGEX accompagne les agriculteurs, les investisseurs et les instances juridiques à travers une assistance technique de pointe, des expertises rigoureuses et un suivi stratégique.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                <a href="#prestations" class="bg-agri-500 text-white px-8 py-3.5 rounded-md font-semibold hover:bg-agri-600 transition-all text-lg shadow-lg">
+                    Découvrir nos services
+                </a>
+                <a href="#contact" class="bg-white/10 backdrop-blur-sm text-white border border-white/30 px-8 py-3.5 rounded-md font-semibold hover:bg-white/20 transition-all text-lg">
+                    Nous contacter
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST BANNER -->
+    <section class="bg-white border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <div class="flex items-center justify-center space-x-3 text-agri-800">
+                    <i class="fa-solid fa-stamp text-2xl"></i>
+                    <span class="font-semibold text-lg">Agréé par l'État</span>
+                </div>
+                <div class="flex items-center justify-center space-x-3 text-agri-800">
+                    <i class="fa-solid fa-scale-balanced text-2xl"></i>
+                    <span class="font-semibold text-lg">Expertise Judiciaire</span>
+                </div>
+                <div class="flex items-center justify-center space-x-3 text-agri-800">
+                    <i class="fa-solid fa-chart-line text-2xl"></i>
+                    <span class="font-semibold text-lg">Accompagnement Stratégique</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRESTATIONS SECTION -->
+    <section id="prestations" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-agri-900 mb-4">Nos Prestations</h2>
+                <div class="w-24 h-1.5 bg-agri-500 mx-auto rounded-full"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto text-lg">
+                    Une gamme complète de services conçus pour répondre aux défis agricoles modernes avec rigueur et professionnalisme.
+                </p>
+            </div>
+
+            <!-- Django hint: 
+                 You can wrap the inner div inside a {% for service in services %} loop.
+            -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Service 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all group">
+                    <div class="w-14 h-14 bg-agri-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-agri-700 transition-colors">
+                        <i class="fa-solid fa-seedling text-2xl text-agri-700 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Assistance Technique</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Accompagnement continu sur le terrain pour optimiser les rendements et garantir la santé de vos cultures.
+                    </p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all group">
+                    <div class="w-14 h-14 bg-agri-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-agri-700 transition-colors">
+                        <i class="fa-solid fa-compass text-2xl text-agri-700 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Conseils et orientations</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Stratégies sur mesure pour guider vos choix de production et de gestion agricole.
+                    </p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all group">
+                    <div class="w-14 h-14 bg-agri-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-agri-700 transition-colors">
+                        <i class="fa-solid fa-file-invoice-dollar text-2xl text-agri-700 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Études Technico-économiques</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Analyses approfondies pour évaluer la faisabilité et la rentabilité de vos projets agricoles.
+                    </p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all group">
+                    <div class="w-14 h-14 bg-agri-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-agri-700 transition-colors">
+                        <i class="fa-solid fa-magnifying-glass-chart text-2xl text-agri-700 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Expertises Agricoles</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Évaluations précises des sinistres, valorisation des terres et diagnostics de l'exploitation.
+                    </p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all group">
+                    <div class="w-14 h-14 bg-agri-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-agri-700 transition-colors">
+                        <i class="fa-solid fa-microscope text-2xl text-agri-700 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Consultations Techniques</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Avis d'experts sur des problématiques agronomiques, phytosanitaires et zootechniques spécifiques.
+                    </p>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all group">
+                    <div class="w-14 h-14 bg-agri-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-agri-700 transition-colors">
+                        <i class="fa-solid fa-gavel text-2xl text-agri-700 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Consultations Juridiques</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Assistance pour les litiges fonciers, contrats agricoles et conformité réglementaire.
+                    </p>
+                </div>
+
+                <!-- Service 7 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all group">
+                    <div class="w-14 h-14 bg-agri-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-agri-700 transition-colors">
+                        <i class="fa-solid fa-tasks text-2xl text-agri-700 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Suivi et Évaluation</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Monitoring rigoureux de vos investissements pour garantir l'atteinte des objectifs fixés.
+                    </p>
+                </div>
+
+                <!-- Service 8 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all group">
+                    <div class="w-14 h-14 bg-agri-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-agri-700 transition-colors">
+                        <i class="fa-solid fa-users-viewfinder text-2xl text-agri-700 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Analyse Socio-économique</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Études de l'impact social et territorial de vos projets agricoles au niveau local ou régional.
+                    </p>
+                </div>
+
+                <!-- Service 9 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all group">
+                    <div class="w-14 h-14 bg-agri-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-agri-700 transition-colors">
+                        <i class="fa-solid fa-chalkboard-user text-2xl text-agri-700 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Formation Spécialisée</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Renforcement des capacités techniques et managériales pour les équipes et les exploitants.
+                    </p>
+                </div>
+
+                <!-- Service 10 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all group">
+                    <div class="w-14 h-14 bg-agri-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-agri-700 transition-colors">
+                        <i class="fa-solid fa-bullhorn text-2xl text-agri-700 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Sensibilisation et Vulgarisation</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Diffusion des bonnes pratiques agricoles et introduction de nouvelles technologies.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & FOOTER SECTION -->
+    <section id="contact" class="bg-white border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                
+                <!-- Contact Info -->
+                <div>
+                    <h2 class="text-3xl font-serif font-bold text-agri-900 mb-6">Contactez notre cabinet</h2>
+                    <p class="text-gray-600 mb-10 text-lg">
+                        Notre équipe d'experts est à votre disposition pour étudier votre dossier et vous proposer un accompagnement sur-mesure.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-agri-50 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-location-dot text-agri-700 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Adresse</h4>
+                                <p class="text-gray-600 mt-1">123 Boulevard de l'Agriculture<br>Alger, Algérie 16000</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-agri-50 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-phone text-agri-700 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Téléphone</h4>
+                                <p class="text-gray-600 mt-1">+213 (0) 555 12 34 56<br>+213 (0) 21 98 76 54</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-agri-50 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-envelope text-agri-700 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Email</h4>
+                                <p class="text-gray-600 mt-1">contact@betagex.dz</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 shadow-sm">
+                    <!-- Django hint: Replace action with {% url 'contact' %} and add {% csrf_token %} -->
+                    <form action="#" method="POST" class="space-y-6">
+                        
+                        <div>
+                            <label for="nom" class="block text-sm font-semibold text-gray-700 mb-2">Nom & Prénom</label>
+                            <input type="text" id="nom" name="nom" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-agri-500 focus:border-agri-500 outline-none transition-all" placeholder="Votre nom complet" required>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="telephone" class="block text-sm font-semibold text-gray-700 mb-2">Téléphone</label>
+                                <input type="tel" id="telephone" name="telephone" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-agri-500 focus:border-agri-500 outline-none transition-all" placeholder="Numéro de téléphone" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-agri-500 focus:border-agri-500 outline-none transition-all" placeholder="adresse@email.com">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="besoin" class="block text-sm font-semibold text-gray-700 mb-2">Type de besoin</label>
+                            <div class="relative">
+                                <select id="besoin" name="besoin" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-agri-500 focus:border-agri-500 outline-none appearance-none transition-all bg-white" required>
+                                    <option value="" disabled selected>Sélectionnez un service...</option>
+                                    <option value="expertise">Expertise Judiciaire / Agricole</option>
+                                    <option value="etude">Étude Technico-économique</option>
+                                    <option value="conseil">Consultation / Conseil</option>
+                                    <option value="formation">Formation Spécialisée</option>
+                                    <option value="autre">Autre demande</option>
+                                </select>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
+                                    <i class="fa-solid fa-chevron-down text-sm"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-semibold text-gray-700 mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-agri-500 focus:border-agri-500 outline-none transition-all resize-none" placeholder="Détaillez votre demande ici..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-agri-700 text-white font-bold py-4 rounded-lg hover:bg-agri-800 transition-colors shadow-md">
+                            Envoyer la demande
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-agri-900 text-gray-300 py-12 border-t border-agri-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+                <div class="text-center md:text-left">
+                    <span class="text-2xl font-serif font-black text-white tracking-tight">BETAGEX</span>
+                    <p class="mt-2 text-sm text-agri-100/70">Bureau d'Études et d'Expertises Agricoles</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-agri-100/70 hover:text-white transition-colors">
+                        <i class="fa-brands fa-linkedin text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-agri-100/70 hover:text-white transition-colors">
+                        <i class="fa-brands fa-facebook text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-12 pt-8 border-t border-white/10 text-center text-sm text-agri-100/50 flex flex-col md:flex-row justify-between items-center">
+                <p>&copy; 2026 BETAGEX. Tous droits réservés.</p>
+                <div class="mt-4 md:mt-0 space-x-4">
+                    <a href="#" class="hover:text-white transition-colors">Mentions légales</a>
+                    <a href="#" class="hover:text-white transition-colors">Politique de confidentialité</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
